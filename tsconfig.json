@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "target": "ES2017",
-        "lib": ["ES2017"],
+        "lib": ["ES2017", "dom"],
         "outDir": "./build",
         "baseUrl": "./src",
         "strict": true,
