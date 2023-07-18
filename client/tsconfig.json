@@ -10,7 +10,10 @@
             "ES2022",
             "dom"
         ],
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "paths": {
+            "@mui/styled-engine": ["./node_modules/@mui/styled-engine-sc"]
+        }
     },
     "exclude": [
         "node_modules"
