@@ -11,7 +11,7 @@ module.exports = {
     "plugin:vitest/recommended",
     "prettier",
   ],
-  ignorePatterns: ["dist", ".eslintrc.cjs"],
+  ignorePatterns: ["dist", ".eslintrc.cjs", "functions"],
   parser: "@typescript-eslint/parser",
   plugins: ["react-refresh", "import"],
   settings: {
