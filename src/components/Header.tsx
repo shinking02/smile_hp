@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { sp, useScreenSize, ScreenSize } from "../media";
+
 const HeaderWrapper = styled.header`
     position: fixed;
     display: flex;
@@ -10,6 +12,9 @@ const HeaderWrapper = styled.header`
     z-index: 100;
     background-color: rgba(0, 0, 0, 0.7);
     padding: 0px 40px;
+    ${sp`
+        padding: 0px 10px;
+    `}
     box-sizing: border-box;
 `;
 
@@ -25,6 +30,7 @@ const LogoImg = styled.img`
 const LogoText = styled.div`
     color: #ffffff;
     font-size: 12px;
+    margin-left: 8px;
 `;
 
 const NavWrapper = styled.div``;
@@ -35,14 +41,14 @@ const NavItem = styled.a`
     font-weight: bold;
 `;
 const Header = () => {
+    const screenSize = useScreenSize();
     return (
         <HeaderWrapper>
             <LogoWrapper href="/">
                 <LogoImg src="./assets/logo.svg" />
-                <LogoText>手話ダンス スマイル</LogoText>
+                {(screenSize === ScreenSize.PC || screenSize === ScreenSize.TAB) && <LogoText>手話ダンス スマイル</LogoText>}
             </LogoWrapper>
             <NavWrapper>
-                <NavItem href="blog">ブログ</NavItem>
                 <NavItem href="contact">お問い合わせ</NavItem>
             </NavWrapper>
         </HeaderWrapper>
