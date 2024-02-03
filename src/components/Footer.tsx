@@ -51,7 +51,7 @@ const Footer = () => {
         <FooterWrapper>
             <FooterNav>
                 <FooterLogo href="/">
-                    <LogoImg src="./assets/logo.svg" />
+                    <LogoImg src="/assets/logo.svg" />
                     {(screenSize === ScreenSize.PC || screenSize === ScreenSize.TAB) && <LogoText>手話ダンス スマイル</LogoText>}
                 </FooterLogo>
                 <NavLink href="contact">お問い合わせ</NavLink>
