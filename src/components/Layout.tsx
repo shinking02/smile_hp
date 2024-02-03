@@ -26,7 +26,7 @@ const Layout: React.FC = () => {
         if (header) {
             setHeaderHeight(header.clientHeight);
         }
-    });
+    }, []);
     return (
         <>
             <Header />
