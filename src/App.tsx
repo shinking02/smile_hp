@@ -5,7 +5,6 @@ import reset from "styled-reset";
 import Layout from "./components/Layout";
 import Top from "./pages/Top";
 
-
 const GlobalStyle = createGlobalStyle`
     ${reset}
     a {
