@@ -28,7 +28,7 @@ const LogoImg = styled.img`
 `;
 
 const LogoText = styled.div`
-    color: #ffffff;
+    color: ${(props) => props.theme.white};
     font-size: 12px;
     margin-left: 8px;
 `;
@@ -36,7 +36,7 @@ const LogoText = styled.div`
 const NavWrapper = styled.div``;
 
 const NavItem = styled.a`
-    color: #ffffff;
+    color: ${(props) => props.theme.white};
     margin-right: 20px;
     font-weight: bold;
 `;
