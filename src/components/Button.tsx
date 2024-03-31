@@ -12,6 +12,7 @@ const ButtonWrapper = styled.button`
     border-radius: 6px;
     background: ${(props) => props.theme.yellow};
     font-weight: bold;
+    color: ${(props) => props.theme.black};
     &:hover {
         opacity: 0.6;
     }

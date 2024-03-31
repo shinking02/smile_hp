@@ -10,7 +10,7 @@ const TitleWrapper = styled.div`
     color: ${(props) => props.theme.black};
     text-decoration: underline;
     text-decoration-color: ${(props) => props.theme.lightBlue};
-    margin-bottom: 12px;
+    margin-bottom: 22px;
 `;
 
 const Title = (props: TitleProps) => {
