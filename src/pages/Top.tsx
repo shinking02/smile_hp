@@ -4,6 +4,7 @@ import { useScreenSize, ScreenSize, tab, sp } from "../media";
 
 import ActivityCard from "@/components/ActivityCard";
 import Button from "@/components/Button";
+import { ContentsContainer } from "@/components/ContentsContainer";
 import Letter from "@/components/Letter";
 import Title from "@/components/Title";
 const ThumbnailContainer = styled.div<{ src: string }>`
@@ -56,12 +57,6 @@ const ContentsBackground = styled.div`
     margin-right: calc(((100vw - 100%) / 2) * -1);
     z-index: -1;
     padding: 20px 0;
-`;
-
-const ContentsContainer = styled.div`
-    margin: 80px auto;
-    max-width: 1200px;
-    padding: 0 4%;
 `;
 
 const ButtonContainer = styled.div`
