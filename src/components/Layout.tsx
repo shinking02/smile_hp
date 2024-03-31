@@ -8,12 +8,15 @@ import Header from "./Header";
 import { sp } from "../media";
 
 const Content = styled.div<{ headerHeight: number; footerHeight: number }>`
-    min-height: calc(100vh - ${(props) => props.footerHeight + props.headerHeight + 40}px);
+    min-height: calc(
+        100vh - ${(props) => props.footerHeight + props.headerHeight + 40}px
+    );
     padding: calc(${(props) => props.headerHeight}px + 40px) 120px 0;
     ${sp`
         padding: 80px 10px 0 10px;
     `}
 `;
+
 const Layout: React.FC = () => {
     const [footerHeight, setFooterHeight] = useState(85);
     const [headerHeight, setHeaderHeight] = useState(40);

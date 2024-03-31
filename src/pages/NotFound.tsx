@@ -22,7 +22,10 @@ const NotFound = () => {
         <>
             <Area404>404</Area404>
             <Title title="NotFound" />
-            <Letter>申し訳ありません。お探しのページが見つかりませんでした。 削除されたか移動した可能性があります。</Letter>
+            <Letter>
+                申し訳ありません。お探しのページが見つかりませんでした。
+                削除されたか移動した可能性があります。
+            </Letter>
             <ButtonContainer>
                 <Button
                     title="トップへ"
