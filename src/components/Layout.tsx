@@ -5,16 +5,12 @@ import styled from "styled-components";
 
 import Footer from "./Footer";
 import Header from "./Header";
-import { sp } from "../media";
 
 const Content = styled.div<{ headerHeight: number; footerHeight: number }>`
     min-height: calc(
         100vh - ${(props) => props.footerHeight + props.headerHeight + 40}px
     );
-    padding: calc(${(props) => props.headerHeight}px + 40px) 360px 0;
-    ${sp`
-        padding: 80px 10px 0 10px;
-    `}
+    padding-top: calc(${(props) => props.headerHeight}px + 40px);
 `;
 
 const Layout: React.FC = () => {
