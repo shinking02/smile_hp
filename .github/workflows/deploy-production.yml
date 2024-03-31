@@ -26,12 +26,13 @@ jobs:
                   projectId: smile-sign-411812
 
     slackNotification:
+        needs: build_and_deploy
         name: Slack-Notification
         runs-on: ubuntu-latest
         env:
             SLACK_USERNAME: DeployBot
             SLACK_ICON: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
-            SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+            SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
 
         steps:
             - name: Checkout
