@@ -8,7 +8,8 @@ interface LetterProps {
 
 const LetterWrap = styled.div`
     color: ${(props) => props.theme.black};
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
+    line-height: 1.4em;
     margin-top: 11px;
 `;
 
