@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
-import { sp, useScreenSize, ScreenSize } from "../media";
+import { useScreenSize, ScreenSize, tab, sp } from "../media";
 
+import ActivityCard from "@/components/ActivityCard";
 import Button from "@/components/Button";
 import Letter from "@/components/Letter";
 import Title from "@/components/Title";
@@ -48,26 +49,36 @@ const ThumbnailText = styled.div<{ isSp: boolean }>`
     }
 `;
 
-const ContentsWrapper = styled.div`
+const ContentsBackground = styled.div`
     margin-top: 100vh;
     background-color: white;
     margin-left: calc(((100vw - 100%) / 2) * -1);
     margin-right: calc(((100vw - 100%) / 2) * -1);
     z-index: -1;
-    padding: 20px 360px;
-    ${sp`
-        padding: 20px 10px;
-    `}
+    padding: 20px 0;
 `;
 
 const ContentsContainer = styled.div`
     margin: 80px auto;
+    max-width: 1200px;
+    padding: 0 4%;
 `;
 
 const ButtonContainer = styled.div`
     width: 100%;
     margin: 30px auto;
     text-align: center;
+`;
+
+const ActivitiesContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    ${tab`
+        flex-direction: column;
+    `}
+    ${sp`
+        flex-direction: column;
+    `}
 `;
 
 const Top: React.FC = () => {
@@ -80,7 +91,7 @@ const Top: React.FC = () => {
                 <span>手話</span>で<br />
                 <span>踊</span>ろう
             </ThumbnailText>
-            <ContentsWrapper>
+            <ContentsBackground>
                 <ContentsContainer>
                     <Title title="スマイルとは" />
                     <Letter>
@@ -90,6 +101,23 @@ const Top: React.FC = () => {
                 </ContentsContainer>
                 <ContentsContainer>
                     <Title title="活動内容" />
+                    <ActivitiesContainer>
+                        <ActivityCard
+                            title="練習"
+                            summary="月2回(水曜日)に練習を行っており、新しい曲に挑戦しています。叙情歌や最近の曲を交えて楽しく踊っています。"
+                            imagePath="/practice.jpg"
+                        />
+                        <ActivityCard
+                            title="発表会"
+                            summary="年に一回(秋または春)、各地の会員が集まり、日ごろの練習の成果を発表します。"
+                            imagePath="/presentation.jpg"
+                        />
+                        <ActivityCard
+                            title="ボランティア活動"
+                            summary="地域の老人福祉施設、病院、学校や学童などで披露させて頂いています。"
+                            imagePath="/volunteer.jpg"
+                        />
+                    </ActivitiesContainer>
                 </ContentsContainer>
                 <ContentsContainer>
                     <Title title="一緒に踊りませんか?" />
@@ -113,7 +141,7 @@ const Top: React.FC = () => {
                 <ContentsContainer>
                     <Title title="活動場所" />
                 </ContentsContainer>
-            </ContentsWrapper>
+            </ContentsBackground>
         </>
     );
 };
