@@ -1,4 +1,5 @@
 name: Deploy to Firebase Hosting on merge
+
 on:
     push:
         branches:
@@ -23,3 +24,33 @@ jobs:
                   firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_SMILE_SIGN_411812 }}"
                   channelId: live
                   projectId: smile-sign-411812
+
+    slackNotification:
+        name: Slack-Notification
+        runs-on: ubuntu-latest
+        env:
+            SLACK_USERNAME: DeployBot
+            SLACK_ICON: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
+            SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+
+            # 成功
+            - name: Slack Notification on Success
+              uses: rtCamp/action-slack-notify@v2
+              if: ${{ success() }}
+              env:
+                  SLACK_TITLE: Deploy / Success
+                  SLACK_COLOR: good
+                  SLACK_MESSAGE: Successfully deployed to Firebase🚀
+
+            # 失敗
+            - name: Slack Notification on Failure
+              uses: rtCamp/action-slack-notify@v2
+              if: ${{ failure() }}
+              env:
+                  SLACK_TITLE: Deploy / Failure
+                  SLACK_COLOR: danger
+                  SLACK_MESSAGE: Deployment to Firebase failed🥺
