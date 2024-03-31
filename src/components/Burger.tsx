@@ -31,6 +31,10 @@ const BurgerStyle = styled.div`
         background: white;
     }
 
+    & .bm-cross-button {
+        pointer-events: auto;
+    }
+
     & .bm-menu-wrap {
         background: ${(props) => props.theme.black};
     }
@@ -42,6 +46,10 @@ const BurgerStyle = styled.div`
 
     & .bm-cross {
         background: white;
+    }
+
+    & .bm-item-list {
+        height: 80% !important;
     }
 `;
 
