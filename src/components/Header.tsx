@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+import Burger from "./Burger";
 import { sp, useScreenSize, ScreenSize } from "../media";
 
 const HeaderWrapper = styled.header`
@@ -40,16 +41,28 @@ const NavItem = styled.a`
     margin-right: 20px;
     font-weight: bold;
 `;
+
 const Header = () => {
     const screenSize = useScreenSize();
     return (
         <HeaderWrapper>
             <LogoWrapper href="/">
                 <LogoImg src="/logo.svg" />
-                {(screenSize === ScreenSize.PC || screenSize === ScreenSize.TAB) && <LogoText>手話ダンス スマイル</LogoText>}
+                {(screenSize === ScreenSize.PC ||
+                    screenSize === ScreenSize.TAB) && (
+                    <LogoText>手話ダンス スマイル</LogoText>
+                )}
             </LogoWrapper>
             <NavWrapper>
-                <NavItem href="contact">お問い合わせ</NavItem>
+                {screenSize === ScreenSize.PC ||
+                screenSize === ScreenSize.TAB ? (
+                    <>
+                        <NavItem href="contact">ブログ</NavItem>
+                        <NavItem href="contact">お問い合わせ</NavItem>
+                    </>
+                ) : (
+                    <Burger />
+                )}
             </NavWrapper>
         </HeaderWrapper>
     );

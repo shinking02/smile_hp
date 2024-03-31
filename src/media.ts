@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 
-import { css, CSSObject, FlattenSimpleInterpolation, SimpleInterpolation } from "styled-components";
+import {
+    css,
+    CSSObject,
+    FlattenSimpleInterpolation,
+    SimpleInterpolation,
+} from "styled-components";
 
 export enum ScreenSize {
     SP = 560,
@@ -8,18 +13,28 @@ export enum ScreenSize {
     PC = 1025,
 }
 
-export const sp = (first: CSSObject | TemplateStringsArray, ...interpolations: SimpleInterpolation[]): FlattenSimpleInterpolation => css`
+export const sp = (
+    first: CSSObject | TemplateStringsArray,
+    ...interpolations: SimpleInterpolation[]
+): FlattenSimpleInterpolation => css`
     @media (max-width: ${ScreenSize.SP}px) {
         ${css(first, ...interpolations)}
     }
 `;
 
-export const tab = (first: CSSObject | TemplateStringsArray, ...interpolations: SimpleInterpolation[]): FlattenSimpleInterpolation => css`
-    @media (min-width: ${ScreenSize.SP + 1}px) and (max-width: ${ScreenSize.TAB}px) {
+export const tab = (
+    first: CSSObject | TemplateStringsArray,
+    ...interpolations: SimpleInterpolation[]
+): FlattenSimpleInterpolation => css`
+    @media (min-width: ${ScreenSize.SP +
+        1}px) and (max-width: ${ScreenSize.TAB}px) {
         ${css(first, ...interpolations)}
     }
 `;
-export const pc = (first: CSSObject | TemplateStringsArray, ...interpolations: SimpleInterpolation[]): FlattenSimpleInterpolation => css`
+export const pc = (
+    first: CSSObject | TemplateStringsArray,
+    ...interpolations: SimpleInterpolation[]
+): FlattenSimpleInterpolation => css`
     @media (min-width: ${ScreenSize.PC}px) {
         ${css(first, ...interpolations)}
     }
