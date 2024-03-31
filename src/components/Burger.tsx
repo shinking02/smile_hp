@@ -16,13 +16,14 @@ const BurgerStyle = styled.div`
     height: 100%;
     top: 0;
     left: 0;
-
+    pointer-events: none;
     & .bm-burger-button {
         position: fixed;
         width: 30px;
         height: 24px;
         right: 10px;
         top: 8px;
+        pointer-events: auto;
     }
 
     & .bm-burger-bars {
@@ -36,6 +37,7 @@ const BurgerStyle = styled.div`
 
     & .bm-menu {
         padding: 20px;
+        pointer-events: auto;
     }
 
     & .bm-cross {
