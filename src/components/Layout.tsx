@@ -10,7 +10,7 @@ const Content = styled.div<{ headerHeight: number; footerHeight: number }>`
     min-height: calc(
         100vh - ${(props) => props.footerHeight + props.headerHeight + 40}px
     );
-    padding-top: calc(${(props) => props.headerHeight}px + 40px);
+    padding: calc(${(props) => props.headerHeight}px + 40px) 4% 0;
 `;
 
 const Layout: React.FC = () => {
