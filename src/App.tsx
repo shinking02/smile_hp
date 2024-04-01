@@ -3,6 +3,7 @@ import { createGlobalStyle, ThemeProvider } from "styled-components";
 import reset from "styled-reset";
 
 import Layout from "./components/Layout";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Top from "./pages/Top";
 
@@ -34,6 +35,7 @@ const App: React.FC = () => {
                     <Routes>
                         <Route path="/" element={<Layout />}>
                             <Route path="/" element={<Top />} />
+                            <Route path="/contact" element={<Contact />} />
                             <Route path="*" element={<NotFound />} />
                         </Route>
                     </Routes>

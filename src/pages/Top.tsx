@@ -6,7 +6,9 @@ import ActivityCard from "@/components/ActivityCard";
 import Button from "@/components/Button";
 import { ContentsContainer } from "@/components/ContentsContainer";
 import Letter from "@/components/Letter";
+import LocationBox from "@/components/LocationBox";
 import Title from "@/components/Title";
+
 const ThumbnailContainer = styled.div<{ src: string }>`
     content: "";
     display: block;
@@ -56,7 +58,7 @@ const ContentsBackground = styled.div`
     margin-left: calc(((100vw - 100%) / 2) * -1);
     margin-right: calc(((100vw - 100%) / 2) * -1);
     z-index: -1;
-    padding: 20px 0;
+    padding: 20px 4%;
 `;
 
 const ButtonContainer = styled.div`
@@ -65,9 +67,9 @@ const ButtonContainer = styled.div`
     text-align: center;
 `;
 
-const ActivitiesContainer = styled.div`
+const ResponsiveContainer = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     ${tab`
         flex-direction: column;
     `}
@@ -96,7 +98,7 @@ const Top: React.FC = () => {
                 </ContentsContainer>
                 <ContentsContainer>
                     <Title title="活動内容" />
-                    <ActivitiesContainer>
+                    <ResponsiveContainer>
                         <ActivityCard
                             title="練習"
                             summary="月2回(水曜日)に練習を行っており、新しい曲に挑戦しています。叙情歌や最近の曲を交えて楽しく踊っています。"
@@ -112,7 +114,7 @@ const Top: React.FC = () => {
                             summary="地域の老人福祉施設、病院、学校や学童などで披露させて頂いています。"
                             imagePath="/volunteer.jpg"
                         />
-                    </ActivitiesContainer>
+                    </ResponsiveContainer>
                 </ContentsContainer>
                 <ContentsContainer>
                     <Title title="一緒に踊りませんか?" />
@@ -135,6 +137,54 @@ const Top: React.FC = () => {
                 </ContentsContainer>
                 <ContentsContainer>
                     <Title title="活動場所" />
+                    <ResponsiveContainer>
+                        <LocationBox
+                            location="東京"
+                            locationDetails={[
+                                {
+                                    locationDetail: "中央区",
+                                    placeName: "月島社会教育会館",
+                                    href: "https://goo.gl/maps/Eai2HNUNq7Rnqi8VA",
+                                    imagePath: "/chuo.jpg",
+                                },
+                                {
+                                    locationDetail: "杉並区",
+                                    placeName: "高円寺ゆうゆう館",
+                                    href: "https://goo.gl/maps/9yvzsq6NLwpt7DSk6",
+                                    imagePath: "/suginami.jpg",
+                                },
+                                {
+                                    locationDetail: "小平市",
+                                    placeName: "美園地域センター他",
+                                    href: "https://goo.gl/maps/DXwji5U968diq2VC9",
+                                    imagePath: "/kodaira.jpg",
+                                },
+                            ]}
+                        />
+                        <LocationBox
+                            location="埼玉"
+                            locationDetails={[
+                                {
+                                    locationDetail: "草加市",
+                                    placeName: "草加市民体育館",
+                                    href: "https://goo.gl/maps/yhsRrDe9LpWU8enw7",
+                                    imagePath: "/souka.jpg",
+                                },
+                                {
+                                    locationDetail: "越谷市",
+                                    placeName: "越谷市北部市民会館",
+                                    href: "https://goo.gl/maps/azti3qa1uvxXeK4b9",
+                                    imagePath: "/koshigaya.jpg",
+                                },
+                                {
+                                    locationDetail: "幸手市",
+                                    placeName: "幸手市中央公民館",
+                                    href: "https://goo.gl/maps/XWmymw9pbkTJ5E4z7",
+                                    imagePath: "/satte.jpg",
+                                },
+                            ]}
+                        />
+                    </ResponsiveContainer>
                 </ContentsContainer>
             </ContentsBackground>
         </>
