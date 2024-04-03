@@ -4,6 +4,7 @@ interface ButtonProps {
     title: string;
     onClick?: () => void;
     disabled?: boolean;
+    type?: "button" | "submit" | "reset";
 }
 
 const ButtonWrapper = styled.button<{ disabled?: boolean }>`
@@ -27,6 +28,7 @@ const Button = (props: ButtonProps) => {
         <ButtonWrapper
             onClick={props.disabled ? undefined : props.onClick}
             disabled={props.disabled}
+            type={props.type}
         >
             {props.title}
         </ButtonWrapper>
