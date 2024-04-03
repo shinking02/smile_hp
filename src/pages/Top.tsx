@@ -132,9 +132,9 @@ const Top: React.FC = () => {
                         />
                     </ButtonContainer>
                 </ContentsContainer>
-                <ContentsContainer>
+                {/* <ContentsContainer>
                     <Title title="ブログ" />
-                </ContentsContainer>
+                </ContentsContainer> */}
                 <ContentsContainer>
                     <Title title="活動場所" />
                     <ResponsiveContainer>

@@ -57,7 +57,7 @@ const Header = () => {
                 {screenSize === ScreenSize.PC ||
                 screenSize === ScreenSize.TAB ? (
                     <>
-                        <NavItem href="contact">ブログ</NavItem>
+                        <NavItem href="blogs">ブログ</NavItem>
                         <NavItem href="contact">お問い合わせ</NavItem>
                     </>
                 ) : (
