@@ -64,7 +64,7 @@ const Contact = () => {
         <ContentsContainer>
             <ContactForm
                 method="post"
-                action="https://hyperform.jp/api/rdF6BWRW"
+                action={import.meta.env.VITE_HYPER_FORM_URL || ""}
             >
                 <Title title="お問い合わせ" />
                 <FormSection>
