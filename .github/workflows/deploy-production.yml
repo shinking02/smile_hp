@@ -16,7 +16,7 @@ jobs:
                   echo "VITE_STORAGE_BUCKET=${{ secrets.VITE_STORAGE_BUCKET }}" > .env
                   echo "VITE_MESSAGING_SENDER_ID=${{ secrets.VITE_MESSAGING_SENDER_ID }}" > .env
                   echo "VITE_APP_ID=${{ secrets.APP_ID }}" > .env
-                  echo "VITE_HYPER_FORM_URL"=${{ secrets.VITE_HYPER_FORM_URL }}" > .env
+                  echo "VITE_HYPER_FORM_URL=${{ secrets.VITE_HYPER_FORM_URL }}" > .env
             - uses: actions/checkout@v4
             - run: npm install && npm run build
             - uses: FirebaseExtended/action-hosting-deploy@v0
