@@ -21,6 +21,7 @@
         "*": "prettier --write --ignore-unknown"
     },
     "dependencies": {
+        "@vercel/speed-insights": "^1.0.10",
         "firebase": "^10.7.2",
         "react": "^18.2.0",
         "react-burger-menu": "^3.0.9",
