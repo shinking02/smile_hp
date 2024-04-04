@@ -9,4 +9,5 @@
             "destination": "/api/express"
         }
     ]
+    "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
