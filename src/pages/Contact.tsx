@@ -96,6 +96,12 @@ const Contact = () => {
                         title="送信"
                         disabled={isSubmitDisable}
                         type="submit"
+                        onClick={() => {
+                            console.log(
+                                import.meta.env.VITE_HYPER_FORM_URL,
+                                import.meta.env.VITE_PROJECT_ID,
+                            );
+                        }}
                     />
                 </ButtonContainer>
             </ContactForm>
