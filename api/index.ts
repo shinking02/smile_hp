@@ -3,7 +3,7 @@ import express, { Router } from "express";
 const app = express();
 const router = Router();
 
-router.get("/posts/:slug", (req, res) => {
+router.get("/test", (req, res) => {
     res.json({
         post: {
             title: "Test Post",
@@ -12,6 +12,6 @@ router.get("/posts/:slug", (req, res) => {
     });
 });
 
-app.use("/api/express", router);
+app.use("/api", router);
 
 export default app;
