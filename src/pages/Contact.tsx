@@ -14,6 +14,8 @@ const ButtonContainer = styled.div`
 `;
 
 const FormSection = styled.div`
+    display: flex;
+    flex-direction: column;
     margin: 20px auto;
     max-width: 40%;
     ${sp`
@@ -32,6 +34,7 @@ const FormTitle = styled.div`
 
 const FormInput = styled.input`
     width: 90%;
+    margin: 0 auto;
     height: 32px;
     color: ${(props) => props.theme.black};
     font-size: 14px;
@@ -41,6 +44,7 @@ const FormInput = styled.input`
 
 const FormTextArea = styled.textarea`
     width: 90%;
+    margin: 0 auto;
     height: 160px;
     color: ${(props) => props.theme.black};
     font-size: 14px;
