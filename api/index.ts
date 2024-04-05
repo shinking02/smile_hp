@@ -3,14 +3,7 @@ import express, { Router } from "express";
 const app = express();
 const router = Router();
 
-router.get("/test", (req, res) => {
-    res.json({
-        post: {
-            title: "Test Post",
-            slug: req.params["slug"],
-        },
-    });
-});
+router.get("/", (_req, res) => res.send("Express on Vercel"));
 
 app.use("/api", router);
 
