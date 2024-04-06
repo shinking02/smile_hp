@@ -13,6 +13,7 @@ function displayDirectoryContentsRecursive(directoryPath: string) {
         }
 
         console.log("Contents of directory:", directoryPath);
+        console.log(files);
         files.forEach((file) => {
             const filePath = path.join(directoryPath, file);
             fs.stat(filePath, (err, stats) => {
