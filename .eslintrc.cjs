@@ -22,9 +22,7 @@ module.exports = {
             "warn",
             { allowConstantExport: true },
         ],
-        // it ではなく test の使用を強制
         "vitest/consistent-test-it": ["error", { fn: "test" }],
-        // import の並び順を設定
         "import/order": [
             "warn",
             {

@@ -81,7 +81,7 @@ const ResponsiveContainer = styled.div`
 const Top: React.FC = () => {
     return (
         <>
-            <ThumbnailContainer src="/background.webp">
+            <ThumbnailContainer src="/images/background.webp">
                 <Mask />
             </ThumbnailContainer>
             <ThumbnailText isSp={useScreenSize() == ScreenSize.SP}>
@@ -102,17 +102,17 @@ const Top: React.FC = () => {
                         <ActivityCard
                             title="練習"
                             summary="月2回(水曜日)に練習を行っており、新しい曲に挑戦しています。叙情歌や最近の曲を交えて楽しく踊っています。"
-                            imagePath="/practice.jpg"
+                            imagePath="/images/practice.jpg"
                         />
                         <ActivityCard
                             title="発表会"
                             summary="年に一回(秋または春)、各地の会員が集まり、日ごろの練習の成果を発表します。"
-                            imagePath="/presentation.jpg"
+                            imagePath="/images/presentation.jpg"
                         />
                         <ActivityCard
                             title="ボランティア活動"
                             summary="地域の老人福祉施設、病院、学校や学童などで披露させて頂いています。"
-                            imagePath="/volunteer.jpg"
+                            imagePath="/images/volunteer.jpg"
                         />
                     </ResponsiveContainer>
                 </ContentsContainer>
@@ -145,19 +145,19 @@ const Top: React.FC = () => {
                                     locationDetail: "中央区",
                                     placeName: "月島社会教育会館",
                                     href: "https://goo.gl/maps/Eai2HNUNq7Rnqi8VA",
-                                    imagePath: "/chuo.jpg",
+                                    imagePath: "/images/chuo.jpg",
                                 },
                                 {
                                     locationDetail: "杉並区",
                                     placeName: "高円寺ゆうゆう館",
                                     href: "https://goo.gl/maps/9yvzsq6NLwpt7DSk6",
-                                    imagePath: "/suginami.jpg",
+                                    imagePath: "/images/suginami.jpg",
                                 },
                                 {
                                     locationDetail: "小平市",
                                     placeName: "美園地域センター他",
                                     href: "https://goo.gl/maps/DXwji5U968diq2VC9",
-                                    imagePath: "/kodaira.jpg",
+                                    imagePath: "/images/kodaira.jpg",
                                 },
                             ]}
                         />
@@ -168,19 +168,19 @@ const Top: React.FC = () => {
                                     locationDetail: "草加市",
                                     placeName: "草加市民体育館",
                                     href: "https://goo.gl/maps/yhsRrDe9LpWU8enw7",
-                                    imagePath: "/souka.jpg",
+                                    imagePath: "/images/souka.jpg",
                                 },
                                 {
                                     locationDetail: "越谷市",
                                     placeName: "越谷市北部市民会館",
                                     href: "https://goo.gl/maps/azti3qa1uvxXeK4b9",
-                                    imagePath: "/koshigaya.jpg",
+                                    imagePath: "/images/koshigaya.jpg",
                                 },
                                 {
                                     locationDetail: "幸手市",
                                     placeName: "幸手市中央公民館",
                                     href: "https://goo.gl/maps/XWmymw9pbkTJ5E4z7",
-                                    imagePath: "/satte.jpg",
+                                    imagePath: "/images/satte.jpg",
                                 },
                             ]}
                         />

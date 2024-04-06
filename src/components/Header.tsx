@@ -47,7 +47,7 @@ const Header = () => {
     return (
         <HeaderWrapper>
             <LogoWrapper href="/">
-                <LogoImg src="/logo.svg" />
+                <LogoImg src="/images/logo.svg" />
                 {(screenSize === ScreenSize.PC ||
                     screenSize === ScreenSize.TAB) && (
                     <LogoText>手話ダンス スマイル</LogoText>
