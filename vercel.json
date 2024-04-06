@@ -10,7 +10,7 @@
         }
     ],
     "functions": {
-        "api": {
+        "api/index": {
             "includeFiles": "blogs/**/*"
         }
     }
