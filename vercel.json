@@ -8,5 +8,10 @@
             "source": "/(.*)",
             "destination": "/"
         }
-    ]
+    ],
+    "functions": {
+        "api": {
+            "includeFiles": "blogs/**/*"
+        }
+    }
 }
