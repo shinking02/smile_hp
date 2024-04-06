@@ -8,7 +8,6 @@ module.exports = {
         "plugin:react/recommended",
         "plugin:react/jsx-runtime",
         "plugin:react-hooks/recommended",
-        "plugin:vitest/recommended",
         "prettier",
     ],
     ignorePatterns: ["dist", ".eslintrc.cjs"],
@@ -18,13 +17,7 @@ module.exports = {
         react: { version: "detect" },
     },
     rules: {
-        "react-refresh/only-export-components": [
-            "warn",
-            { allowConstantExport: true },
-        ],
-        // it ではなく test の使用を強制
-        "vitest/consistent-test-it": ["error", { fn: "test" }],
-        // import の並び順を設定
+        "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
         "import/order": [
             "warn",
             {

@@ -1,11 +1,10 @@
+import Layout from "@client/components/Layout";
+import Contact from "@client/pages/Contact";
+import NotFound from "@client/pages/NotFound";
+import Top from "@client/pages/Top";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import reset from "styled-reset";
-
-import Layout from "./components/Layout";
-import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound";
-import Top from "./pages/Top";
 
 const theme = {
     lightBlue: "#b3e5fc",

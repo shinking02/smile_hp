@@ -1,9 +1,8 @@
+import Button from "@client/components/Button";
+import { ContentsContainer } from "@client/components/ContentsContainer";
+import Letter from "@client/components/Letter";
+import Title from "@client/components/Title";
 import styled from "styled-components";
-
-import Button from "@/components/Button";
-import { ContentsContainer } from "@/components/ContentsContainer";
-import Letter from "@/components/Letter";
-import Title from "@/components/Title";
 
 const Area404 = styled.div`
     font-size: 160px;

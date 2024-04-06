@@ -1,6 +1,5 @@
+import { sp, useScreenSize, ScreenSize } from "@client/media";
 import styled from "styled-components";
-
-import { sp, useScreenSize, ScreenSize } from "../media";
 
 const FooterWrapper = styled.footer`
     text-align: center;
@@ -52,16 +51,13 @@ const Footer = () => {
             <FooterNav>
                 <FooterLogo href="/">
                     <LogoImg src="/logo.svg" />
-                    {(screenSize === ScreenSize.PC ||
-                        screenSize === ScreenSize.TAB) && (
+                    {(screenSize === ScreenSize.PC || screenSize === ScreenSize.TAB) && (
                         <LogoText>手話ダンス スマイル</LogoText>
                     )}
                 </FooterLogo>
                 <NavLink href="contact">お問い合わせ</NavLink>
             </FooterNav>
-            <CopyRight>
-                © 2024 手話ダンス スマイル All rights reserved.
-            </CopyRight>
+            <CopyRight>© 2024 手話ダンス スマイル All rights reserved.</CopyRight>
         </FooterWrapper>
     );
 };
