@@ -16,6 +16,7 @@ function displayDirectoryContentsRecursive(directoryPath: string) {
         console.log(files);
         files.forEach((file) => {
             const filePath = path.join(directoryPath, file);
+            console.log(filePath);
             fs.stat(filePath, (err, stats) => {
                 if (err) {
                     console.error("Error reading file stats:", err);
@@ -24,6 +25,7 @@ function displayDirectoryContentsRecursive(directoryPath: string) {
 
                 if (stats.isDirectory()) {
                     // ディレクトリの場合、再帰的にその内容を表示する
+                    console.log("directory");
                     displayDirectoryContentsRecursive(filePath);
                 } else {
                     // ファイルの場合、そのまま表示する
