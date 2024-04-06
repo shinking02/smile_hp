@@ -1,4 +1,3 @@
-
 import Layout from "@client/components/Layout";
 import Contact from "@client/pages/Contact";
 import NotFound from "@client/pages/NotFound";

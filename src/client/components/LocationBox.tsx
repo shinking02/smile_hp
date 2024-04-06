@@ -1,7 +1,6 @@
 import { sp, tab } from "@client/media";
 import styled from "styled-components";
 
-
 interface LocationBoxProps {
     location: string;
     locationDetails: {

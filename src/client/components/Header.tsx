@@ -1,4 +1,3 @@
-
 import Burger from "@client/components/Burger";
 import { sp, useScreenSize, ScreenSize } from "@client/media";
 import styled from "styled-components";

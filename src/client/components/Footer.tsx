@@ -1,7 +1,6 @@
 import { sp, useScreenSize, ScreenSize } from "@client/media";
 import styled from "styled-components";
 
-
 const FooterWrapper = styled.footer`
     text-align: center;
     justify-content: center;

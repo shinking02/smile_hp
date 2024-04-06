@@ -1,5 +1,3 @@
-
-
 import ActivityCard from "@client/components/ActivityCard";
 import Button from "@client/components/Button";
 import { ContentsContainer } from "@client/components/ContentsContainer";

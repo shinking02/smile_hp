@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 
-
 import Button from "@client/components/Button";
 import { ContentsContainer } from "@client/components/ContentsContainer";
 import Title from "@client/components/Title";
