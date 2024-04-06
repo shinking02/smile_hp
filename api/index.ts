@@ -23,7 +23,7 @@ function listDirectoryContents(directoryPath: string) {
 }
 
 router.get("/", (_, res) => {
-    listDirectoryContents(process.cwd());
+    listDirectoryContents("/var/task/blogs");
     res.send("Express on Vercel");
 });
 
