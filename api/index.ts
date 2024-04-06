@@ -5,39 +5,25 @@ import express, { Router } from "express";
 
 const app = express();
 const router = Router();
-function displayDirectoryContentsRecursive(directoryPath: string) {
-    fs.readdir(directoryPath, (err, files) => {
-        if (err) {
-            console.error("Error reading directory:", err);
-            return;
+
+function listDirectoryContents(directoryPath: string) {
+    const contents = fs.readdirSync(directoryPath);
+
+    contents.forEach((content) => {
+        const contentPath = path.join(directoryPath, content);
+        const stats = fs.statSync(contentPath);
+
+        if (stats.isFile()) {
+            console.log(contentPath); // ファイルの場合はconsole.log
+        } else if (stats.isDirectory()) {
+            console.log(contentPath + " (directory)"); // ディレクトリの場合はconsole.logし、再帰的に処理
+            listDirectoryContents(contentPath);
         }
-
-        console.log("Contents of directory:", directoryPath);
-        console.log(files);
-        files.forEach((file) => {
-            const filePath = path.join(directoryPath, file);
-            console.log(filePath);
-            fs.stat(filePath, (err, stats) => {
-                if (err) {
-                    console.error("Error reading file stats:", err);
-                    return;
-                }
-
-                if (stats.isDirectory()) {
-                    // ディレクトリの場合、再帰的にその内容を表示する
-                    console.log("directory");
-                    displayDirectoryContentsRecursive(filePath);
-                } else {
-                    // ファイルの場合、そのまま表示する
-                    console.log(filePath);
-                }
-            });
-        });
     });
 }
 
 router.get("/", (_, res) => {
-    displayDirectoryContentsRecursive(process.cwd());
+    listDirectoryContents(process.cwd());
     res.send("Express on Vercel");
 });
 
