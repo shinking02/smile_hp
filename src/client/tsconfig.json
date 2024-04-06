@@ -1,8 +1,4 @@
 {
     "extends": "../../tsconfig.json",
-    "compilerOptions": {
-        "module": "ESNext",
-        "moduleResolution": "Bundler",
-        "jsx": "react-jsx"
-    }
+    "compilerOptions": {}
 }

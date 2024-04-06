@@ -58,17 +58,12 @@ const Contact = () => {
     const [isSubmitDisable, setIsSubmitDisable] = useState(true);
 
     useEffect(() => {
-        name && email && message
-            ? setIsSubmitDisable(false)
-            : setIsSubmitDisable(true);
+        name && email && message ? setIsSubmitDisable(false) : setIsSubmitDisable(true);
     }, [name, email, message]);
 
     return (
         <ContentsContainer>
-            <ContactForm
-                method="post"
-                action={import.meta.env.VITE_HYPER_FORM_URL || ""}
-            >
+            <ContactForm method="post" action={import.meta.env.VITE_HYPER_FORM_URL || ""}>
                 <Title title="お問い合わせ" />
                 <FormSection>
                     <FormTitle>お名前</FormTitle>
@@ -95,11 +90,7 @@ const Contact = () => {
                     />
                 </FormSection>
                 <ButtonContainer>
-                    <Button
-                        title="送信"
-                        disabled={isSubmitDisable}
-                        type="submit"
-                    />
+                    <Button title="送信" disabled={isSubmitDisable} type="submit" />
                 </ButtonContainer>
             </ContactForm>
         </ContentsContainer>
