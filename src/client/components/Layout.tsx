@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
+import Footer from "@client/components/Footer";
+import Header from "@client/components/Header";
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 
-import Footer from "./Footer";
-import Header from "./Header";
 
 const Content = styled.div<{ headerHeight: number; footerHeight: number }>`
     min-height: calc(

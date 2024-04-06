@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 
-import styled from "styled-components";
 
-import Button from "@/components/Button";
-import { ContentsContainer } from "@/components/ContentsContainer";
-import Title from "@/components/Title";
-import { sp } from "@/media";
+import Button from "@client/components/Button";
+import { ContentsContainer } from "@client/components/ContentsContainer";
+import Title from "@client/components/Title";
+import { sp } from "@client/media";
+import styled from "styled-components";
 
 const ButtonContainer = styled.div`
     width: 100%;

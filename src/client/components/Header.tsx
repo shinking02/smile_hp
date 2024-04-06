@@ -1,7 +1,7 @@
-import styled from "styled-components";
 
-import Burger from "./Burger";
-import { sp, useScreenSize, ScreenSize } from "../media";
+import Burger from "@client/components/Burger";
+import { sp, useScreenSize, ScreenSize } from "@client/media";
+import styled from "styled-components";
 
 const HeaderWrapper = styled.header`
     position: fixed;

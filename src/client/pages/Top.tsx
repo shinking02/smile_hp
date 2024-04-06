@@ -1,13 +1,14 @@
+
+
+import ActivityCard from "@client/components/ActivityCard";
+import Button from "@client/components/Button";
+import { ContentsContainer } from "@client/components/ContentsContainer";
+import Letter from "@client/components/Letter";
+import LocationBox from "@client/components/LocationBox";
+import Title from "@client/components/Title";
 import styled from "styled-components";
 
 import { useScreenSize, ScreenSize, tab, sp } from "../media";
-
-import ActivityCard from "@/components/ActivityCard";
-import Button from "@/components/Button";
-import { ContentsContainer } from "@/components/ContentsContainer";
-import Letter from "@/components/Letter";
-import LocationBox from "@/components/LocationBox";
-import Title from "@/components/Title";
 
 const ThumbnailContainer = styled.div<{ src: string }>`
     content: "";
