@@ -1,12 +1,12 @@
 {
     "rewrites": [
         {
-            "source": "/(.*)",
-            "destination": "/idnex.html"
-        },
-        {
             "source": "/api/(.*)",
             "destination": "/api"
+        },
+        {
+            "source": "/(.*)",
+            "destination": "/"
         }
     ]
 }
