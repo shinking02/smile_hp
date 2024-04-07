@@ -1,16 +1,17 @@
 {
-    "version": 2,
-    "builds": [
+    "rewrites": [
         {
-            "src": "dist/main.js",
-            "use": "@vercel/node",
-            "config": { "includeFiles": ["dist/**"] }
+            "source": "/api/(.*)",
+            "destination": "/api/index.ts"
+        },
+        {
+            "source": "/(.*)",
+            "destination": "/"
         }
     ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "dist/main.js"
+    "functions": {
+        "api/index.ts": {
+            "includeFiles": "blogs/**/*"
         }
-    ]
+    }
 }
