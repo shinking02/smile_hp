@@ -51,17 +51,14 @@ const Footer = () => {
         <FooterWrapper>
             <FooterNav>
                 <FooterLogo href="/">
-                    <LogoImg src="/logo.svg" />
-                    {(screenSize === ScreenSize.PC ||
-                        screenSize === ScreenSize.TAB) && (
+                    <LogoImg src="images/logo.svg" />
+                    {(screenSize === ScreenSize.PC || screenSize === ScreenSize.TAB) && (
                         <LogoText>手話ダンス スマイル</LogoText>
                     )}
                 </FooterLogo>
                 <NavLink href="contact">お問い合わせ</NavLink>
             </FooterNav>
-            <CopyRight>
-                © 2024 手話ダンス スマイル All rights reserved.
-            </CopyRight>
+            <CopyRight>© 2024 手話ダンス スマイル All rights reserved.</CopyRight>
         </FooterWrapper>
     );
 };
