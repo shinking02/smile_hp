@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 
-import Footer from "./Footer";
-import Header from "./Header";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 const Content = styled.div<{ headerHeight: number; footerHeight: number }>`
     min-height: calc(
