@@ -11,7 +11,7 @@
     ],
     "functions": {
         "api/index.ts": {
-            "includeFiles": "/api/handler/_blogs.ts"
+            "includeFiles": "/api/handler/_blogs.js"
         }
     }
 }
