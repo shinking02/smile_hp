@@ -7,7 +7,7 @@ const router = Router();
 
 router.get("/blogs", handleBlogs);
 
-router.get("/", (req: express.Request, res: express.Response) => {
+router.get("/", (req, res) => {
     res.send("API is working!");
 });
 
