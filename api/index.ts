@@ -1,31 +1,11 @@
-import fs from "fs";
-import path from "path";
-
 import express, { Router } from "express";
+
+import { handleBlogs } from "./handlers/blogs";
 
 const app = express();
 const router = Router();
 
-function listDirectoryContents(directoryPath: string) {
-    const contents = fs.readdirSync(directoryPath);
-
-    contents.forEach((content) => {
-        const contentPath = path.join(directoryPath, content);
-        const stats = fs.statSync(contentPath);
-
-        if (stats.isFile()) {
-            console.log(contentPath); // ファイルの場合はconsole.log
-        } else if (stats.isDirectory()) {
-            console.log(contentPath + " (directory)"); // ディレクトリの場合はconsole.logし、再帰的に処理
-            listDirectoryContents(contentPath);
-        }
-    });
-}
-
-router.get("/", (_, res) => {
-    listDirectoryContents("/var/task/blogs");
-    res.send("Express on Vercel");
-});
+router.get("/blogs", handleBlogs);
 
 app.use("/api", router);
 
