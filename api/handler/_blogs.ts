@@ -1,3 +1,5 @@
+import fs from "fs";
+
 import express from "express";
 
 interface BlogsResponse {
@@ -12,6 +14,9 @@ interface Blog {
 }
 
 export function handleBlogs(req: express.Request, res: express.Response) {
+    // const [size, page, topRequest] = [req.query.size, req.query.page, req.query.topRequest];
+    const blogDirectories = fs.readdirSync(`${process.cwd()}/blogs`);
+    console.log(blogDirectories);
     const response: BlogsResponse = {
         blogs: [],
         hasNext: false,
