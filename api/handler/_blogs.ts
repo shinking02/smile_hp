@@ -14,6 +14,15 @@ interface Blog {
     thumbnailPath: string;
 }
 
+function extractTitleFromMarkdown(markdown: string): string | null {
+    const titleMatch = markdown.match(/^#\s+(.+)/);
+    if (titleMatch && titleMatch.length > 0) {
+        return titleMatch[0];
+    } else {
+        return null;
+    }
+}
+
 export function handleBlogs(req: express.Request, res: express.Response) {
     const PAGE_SIZE = 12;
     const [page, topRequest] = [req.query.page, req.query.topRequest];
@@ -34,9 +43,9 @@ export function handleBlogs(req: express.Request, res: express.Response) {
     const blogs: Blog[] = targetDirectories.map((dir) => {
         const markdown = fs.readFileSync(`${dir}/blog.md`, "utf-8");
         const meta = fs.readFileSync(`${dir}/meta.json`, "utf-8");
-        const { title, date, thumbnailPath } = JSON.parse(meta);
+        const { date, thumbnailPath } = JSON.parse(meta);
         return {
-            title,
+            title: extractTitleFromMarkdown(markdown) || "No title",
             date,
             markdown,
             thumbnailPath,
