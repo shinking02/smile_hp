@@ -8,6 +8,7 @@ import { ContentsContainer } from "@/components/ContentsContainer";
 import Letter from "@/components/Letter";
 import LocationBox from "@/components/LocationBox";
 import Title from "@/components/Title";
+import APIClient from "@/lib/apiClient";
 
 const ThumbnailContainer = styled.div<{ src: string }>`
     content: "";
@@ -80,6 +81,7 @@ const ResponsiveContainer = styled.div`
 `;
 
 const Top: React.FC = () => {
+    console.log(new APIClient().getBlogs(0));
     return (
         <>
             <ThumbnailContainer src="images/background.webp">
