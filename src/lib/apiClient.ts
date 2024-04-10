@@ -17,7 +17,7 @@ class APIClient {
 
     constructor() {
         this.axiosInstance = axios.create({
-            baseURL: `${import.meta.env.VITE_HOST}/api`,
+            baseURL: import.meta.env.VITE_HOST,
         });
     }
 
@@ -33,7 +33,7 @@ class APIClient {
 
     public async getBlogs(page: number, topRequest: boolean = false): Promise<BlogsResponse> {
         return this.get<BlogsResponse>(
-            `/blogs?page=${page}&topRequest=${topRequest ? "yes" : "no"}`,
+            `/api/blogs?page=${page}&topRequest=${topRequest ? "yes" : "no"}`,
         );
     }
 }
