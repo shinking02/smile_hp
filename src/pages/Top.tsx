@@ -81,7 +81,6 @@ const ResponsiveContainer = styled.div`
 `;
 
 const Top: React.FC = () => {
-    console.log(new APIClient().getBlogs(0));
     return (
         <>
             <ThumbnailContainer src="images/background.webp">
@@ -129,7 +128,9 @@ const Top: React.FC = () => {
                     <ButtonContainer>
                         <Button
                             title="お問い合わせ"
-                            onClick={() => {
+                            onClick={async () => {
+                                const apiClient = new APIClient();
+                                console.log(await apiClient.getBlogs(0));
                                 location.href = "/contact";
                             }}
                         />
