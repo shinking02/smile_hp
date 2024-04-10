@@ -17,7 +17,7 @@ class APIClient {
 
     constructor() {
         this.axiosInstance = axios.create({
-            baseURL: import.meta.env.VITE_HOST,
+            baseURL: `${import.meta.env.VITE_HOST}/api`,
         });
     }
 
