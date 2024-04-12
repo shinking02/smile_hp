@@ -8,6 +8,7 @@ import { ContentsContainer } from "@/components/ContentsContainer";
 import Letter from "@/components/Letter";
 import LocationBox from "@/components/LocationBox";
 import Title from "@/components/Title";
+import APIClient from "@/lib/apiClient";
 
 const ThumbnailContainer = styled.div<{ src: string }>`
     content: "";
@@ -127,7 +128,9 @@ const Top: React.FC = () => {
                     <ButtonContainer>
                         <Button
                             title="お問い合わせ"
-                            onClick={() => {
+                            onClick={async () => {
+                                const apiClient = new APIClient();
+                                console.log(await apiClient.getBlogs(0));
                                 location.href = "/contact";
                             }}
                         />
