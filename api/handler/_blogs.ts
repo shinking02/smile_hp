@@ -29,12 +29,12 @@ export function handleBlogs(req: express.Request, res: express.Response) {
     const sizeNumber = parseInt(size as string);
     const pageNumber = parseInt(page as string) || 0;
     const startIndex = (() => {
-        if (sizeNumber) {
+        if (!isNaN(sizeNumber)) {
             return 0;
         }
         return pageNumber * PAGE_SIZE;
     })();
-    const endIndex = sizeNumber !== 0 ? sizeNumber : startIndex + PAGE_SIZE;
+    const endIndex = isNaN(sizeNumber) ? startIndex + PAGE_SIZE : sizeNumber;
     const blogDirectories = fs.readdirSync(`${process.cwd()}/blogs`);
     const hasNext = endIndex < blogDirectories.length;
     const targetDirectories = blogDirectories
