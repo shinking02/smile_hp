@@ -18,7 +18,7 @@ class APIClient {
     constructor() {
         this.axiosInstance = axios.create({
             // todo hostを動的にする(dev環境で動かない)
-            baseURL: import.meta.env.VITE_HOST,
+            baseURL: import.meta.env.VITE_API_HOST,
         });
     }
 
