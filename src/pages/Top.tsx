@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import styled from "styled-components";
 
 import { useScreenSize, ScreenSize, tab, sp } from "../media";
@@ -81,6 +83,12 @@ const ResponsiveContainer = styled.div`
 `;
 
 const Top: React.FC = () => {
+    useEffect(() => {
+        const apiClient = new APIClient();
+        apiClient.getBlogs(0).then((res) => {
+            console.log(res);
+        });
+    }, []);
     return (
         <>
             <ThumbnailContainer src="images/background.webp">
@@ -129,8 +137,6 @@ const Top: React.FC = () => {
                         <Button
                             title="お問い合わせ"
                             onClick={async () => {
-                                const apiClient = new APIClient();
-                                console.log(await apiClient.getBlogs(0));
                                 location.href = "/contact";
                             }}
                         />
