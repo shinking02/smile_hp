@@ -25,15 +25,15 @@ function extractTitleFromMarkdown(markdown: string): string | null {
 
 export function handleBlogs(req: express.Request, res: express.Response) {
     const PAGE_SIZE = 12;
-    const [page, topRequest] = [req.query.page, req.query.topRequest];
+    const [page, size] = [req.query.page, req.query.size];
     const pageNumber = parseInt(page as string) || 0;
     const startIndex = (() => {
-        if (topRequest === "yes") {
+        if (Number(size)) {
             return 0;
         }
         return pageNumber * PAGE_SIZE;
     })();
-    const endIndex = topRequest === "yes" ? 3 : startIndex + PAGE_SIZE;
+    const endIndex = Number(size) ?? startIndex + PAGE_SIZE;
     const blogDirectories = fs.readdirSync(`${process.cwd()}/blogs`);
     const hasNext = endIndex < blogDirectories.length;
     const targetDirectories = blogDirectories
