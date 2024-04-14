@@ -5,7 +5,7 @@ export interface BlogsResponse {
     hasNext: boolean;
 }
 
-interface Blog {
+export interface Blog {
     title: string;
     date: string; //YYYY-MM-DD
     formattedDate: string; //YYYY年MM月DD日
