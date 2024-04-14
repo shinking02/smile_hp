@@ -164,7 +164,7 @@ const Top: React.FC = () => {
                                         title={blog.title}
                                         date={blog.formattedDate}
                                         thumbnail={blog.thumbnailPath || "images/noimage.jpg"}
-                                        href={`/blogs/${blog.date}`}
+                                        href={`/blog?date=${blog.date}`}
                                     />
                                 </>
                             );
@@ -174,7 +174,7 @@ const Top: React.FC = () => {
                         <Button
                             title="ブログ一覧"
                             onClick={() => {
-                                location.href = "/blogs";
+                                location.href = "/blog_list";
                             }}
                         />
                     </ButtonContainer>

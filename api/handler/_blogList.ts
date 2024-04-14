@@ -2,7 +2,7 @@ import fs from "fs";
 
 import express from "express";
 
-interface BlogsResponse {
+interface BlogListResponse {
     blogs: Blog[];
     hasNext: boolean;
 }
@@ -24,15 +24,14 @@ function extractTitleFromMarkdown(markdown: string): string | null {
     }
 }
 
-function getFirstImagePathFromMarkdown(markdown: string): string {
-    // 画像のパスを抽出する正規表現パターン
-    const imageRegex = /!\[[^\]]*\]\((.*?)\)/;
-    const match = markdown.match(imageRegex);
+function getFirstImageURLFromMarkdown(markdown: string): string | null {
+    const imageURLRegex = /!\[[^\]]*\]\((.*?)\)/;
+    const match = markdown.match(imageURLRegex);
 
     if (match && match.length > 1) {
         return match[1];
     } else {
-        return "";
+        return null;
     }
 }
 
@@ -45,7 +44,7 @@ function formatDate(inputDate: string): string {
     return `${year}年${month}月${day}日`;
 }
 
-export function handleBlogs(req: express.Request, res: express.Response) {
+export function handleBlogList(req: express.Request, res: express.Response) {
     const PAGE_SIZE = 12;
     const [page, size] = [req.query.page, req.query.size];
     const sizeNumber = parseInt(size as string);
@@ -67,18 +66,18 @@ export function handleBlogs(req: express.Request, res: express.Response) {
             const markdown = fs.readFileSync(`${dir}/blog.md`, "utf-8");
             const yyyymmdd = dir.split("/").pop() || "No date";
             return {
-                title: extractTitleFromMarkdown(markdown) || "No title",
+                title: extractTitleFromMarkdown(markdown) ?? "No title",
                 date: yyyymmdd,
                 formattedDate: formatDate(yyyymmdd),
                 markdown,
-                thumbnailPath: getFirstImagePathFromMarkdown(markdown) ?? "",
+                thumbnailPath: getFirstImageURLFromMarkdown(markdown) ?? "",
             };
         })
         .sort((a, b) => {
             return new Date(b.date).getTime() - new Date(a.date).getTime();
         });
 
-    const response: BlogsResponse = {
+    const response: BlogListResponse = {
         blogs,
         hasNext,
     };

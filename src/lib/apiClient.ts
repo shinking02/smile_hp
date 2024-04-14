@@ -1,6 +1,6 @@
 import axios, { AxiosInstance, AxiosResponse } from "axios";
 
-export interface BlogsResponse {
+export interface BlogListResponse {
     blogs: Blog[];
     hasNext: boolean;
 }
@@ -11,6 +11,11 @@ export interface Blog {
     formattedDate: string; //YYYY年MM月DD日
     markdown: string;
     thumbnailPath: string;
+}
+
+export interface BlogResponse {
+    contents: string;
+    formattedDate: string;
 }
 
 class APIClient {
@@ -30,8 +35,12 @@ class APIClient {
     //     return response.data;
     // }
 
-    public async getBlogs(page: number, size?: number): Promise<BlogsResponse> {
-        return this.get<BlogsResponse>(`/api/blogs?page=${page}&size=${size ?? ""}`);
+    public async getBlogs(page: number, size?: number): Promise<BlogListResponse> {
+        return this.get<BlogListResponse>(`/api/blog_list?page=${page}&size=${size ?? ""}`);
+    }
+
+    public async getBlog(date: string): Promise<BlogResponse> {
+        return this.get<BlogResponse>(`/api/blog?date=${date}`);
     }
 }
 

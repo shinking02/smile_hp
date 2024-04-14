@@ -23,6 +23,8 @@ const CardContainer = styled.a`
 const Image = styled.img`
     margin-bottom: 8px;
     width: 100%;
+    height: 180px;
+    object-fit: cover;
 `;
 
 const BlogTitle = styled.div`

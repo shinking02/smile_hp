@@ -5,7 +5,6 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 export default ({ mode }) => {
     process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
-    console.log(mode);
     // import.meta.env.VITE_ENV available here with: process.env.VITE_ENV
     const serverOptions: ServerOptions = {};
     serverOptions.port = parseInt(process.env.VITE_PORT);
