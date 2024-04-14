@@ -8,7 +8,6 @@ import styled from "styled-components";
 import { ContentsContainer } from "../components/ContentsContainer";
 import APIClient, { BlogResponse } from "../lib/apiClient";
 
-
 import Button from "@/components/Button";
 import Loading from "@/components/Loading";
 import { sp } from "@/lib/media";
