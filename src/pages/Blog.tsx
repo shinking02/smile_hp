@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import ReactMarkdown from "react-markdown";
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import remarkBreaks from "remark-breaks";
 import styled from "styled-components";
 
@@ -52,15 +52,14 @@ const Date = styled.div`
 `;
 
 const Blog = () => {
-    const location = useLocation();
-    const date = new URLSearchParams(location.search).get("date") || "";
+    const { date } = useParams<{ date: string }>();
     const [blogRes, setBlogRes] = useState<BlogResponse | null>(null);
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
     const fetchBlog = async () => {
         setIsLoading(true);
         const apiClient = new APIClient();
-        const response = await apiClient.getBlog(date);
+        const response = await apiClient.getBlog(date ?? "");
         setBlogRes(response);
         setIsLoading(false);
     };
