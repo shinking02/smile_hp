@@ -1,11 +1,11 @@
 import axios, { AxiosInstance, AxiosResponse } from "axios";
 
-interface BlogsResponse {
+export interface BlogsResponse {
     blogs: Blog[];
     hasNext: boolean;
 }
 
-interface Blog {
+export interface Blog {
     title: string;
     date: string; //YYYY-MM-DD
     markdown: string;
@@ -29,10 +29,8 @@ class APIClient {
     //     return response.data;
     // }
 
-    public async getBlogs(page: number, topRequest: boolean = false): Promise<BlogsResponse> {
-        return this.get<BlogsResponse>(
-            `/api/blogs?page=${page}&topRequest=${topRequest ? "yes" : "no"}`,
-        );
+    public async getBlogs(page: number, size?: number): Promise<BlogsResponse> {
+        return this.get<BlogsResponse>(`/api/blogs?page=${page}&size=${size ?? ""}`);
     }
 }
 

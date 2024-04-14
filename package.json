@@ -4,7 +4,9 @@
     "version": "0.0.0",
     "type": "module",
     "scripts": {
-        "dev": "vite",
+        "dev": "run-p dev:*",
+        "dev:frontend": "vite",
+        "dev:backend": "vercel dev",
         "build": "tsc && vite build",
         "preview": "vite preview",
         "lint": "run-p lint:*",
