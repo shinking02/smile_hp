@@ -22,7 +22,7 @@ export default ({ mode }) => {
             tsconfigPaths(),
             Sitemap({
                 hostname: process.env.VITE_HOST,
-                dynamicRoutes: ["/contact", "/blogs"],
+                dynamicRoutes: ["/contact", "/blog_list", "/blog/:date"],
             }),
         ],
 
