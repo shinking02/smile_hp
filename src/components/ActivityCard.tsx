@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { sp, tab } from "@/media";
+import { sp, tab } from "@/lib/media";
 
 interface ActivityCardProps {
     title: string;

@@ -17,7 +17,6 @@ export default ({ mode }) => {
             },
         };
     }
-    console.log(serverOptions);
     return defineConfig({
         plugins: [
             react(),

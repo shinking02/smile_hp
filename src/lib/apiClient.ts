@@ -5,9 +5,10 @@ export interface BlogsResponse {
     hasNext: boolean;
 }
 
-export interface Blog {
+interface Blog {
     title: string;
     date: string; //YYYY-MM-DD
+    formattedDate: string; //YYYY年MM月DD日
     markdown: string;
     thumbnailPath: string;
 }

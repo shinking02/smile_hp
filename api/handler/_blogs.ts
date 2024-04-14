@@ -10,17 +10,39 @@ interface BlogsResponse {
 interface Blog {
     title: string;
     date: string; //YYYY-MM-DD
+    formattedDate: string; //YYYY年MM月DD日
     markdown: string;
     thumbnailPath: string;
 }
 
 function extractTitleFromMarkdown(markdown: string): string | null {
     const titleMatch = markdown.match(/^#\s+(.+)/);
-    if (titleMatch && titleMatch.length > 0) {
-        return titleMatch[0];
+    if (titleMatch && titleMatch.length > 1) {
+        return titleMatch[1];
     } else {
         return null;
     }
+}
+
+function getFirstImagePathFromMarkdown(markdown: string): string {
+    // 画像のパスを抽出する正規表現パターン
+    const imageRegex = /!\[[^\]]*\]\((.*?)\)/;
+    const match = markdown.match(imageRegex);
+
+    if (match && match.length > 1) {
+        return match[1];
+    } else {
+        return "";
+    }
+}
+
+function formatDate(inputDate: string): string {
+    const date = new Date(inputDate);
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1; // 月は0から始まるため、+1する
+    const day = date.getDate();
+
+    return `${year}年${month}月${day}日`;
 }
 
 export function handleBlogs(req: express.Request, res: express.Response) {
@@ -40,18 +62,21 @@ export function handleBlogs(req: express.Request, res: express.Response) {
     const targetDirectories = blogDirectories
         .map((dir) => `${process.cwd()}/blogs/${dir}`)
         .slice(startIndex, endIndex);
-
-    const blogs: Blog[] = targetDirectories.map((dir) => {
-        const markdown = fs.readFileSync(`${dir}/blog.md`, "utf-8");
-        const meta = fs.readFileSync(`${dir}/meta.json`, "utf-8");
-        const { date, thumbnailPath } = JSON.parse(meta);
-        return {
-            title: extractTitleFromMarkdown(markdown) || "No title",
-            date,
-            markdown,
-            thumbnailPath,
-        };
-    });
+    const blogs: Blog[] = targetDirectories
+        .map((dir) => {
+            const markdown = fs.readFileSync(`${dir}/blog.md`, "utf-8");
+            const yyyymmdd = dir.split("/").pop() || "No date";
+            return {
+                title: extractTitleFromMarkdown(markdown) || "No title",
+                date: yyyymmdd,
+                formattedDate: formatDate(yyyymmdd),
+                markdown,
+                thumbnailPath: getFirstImagePathFromMarkdown(markdown) ?? "",
+            };
+        })
+        .sort((a, b) => {
+            return new Date(b.date).getTime() - new Date(a.date).getTime();
+        });
 
     const response: BlogsResponse = {
         blogs,

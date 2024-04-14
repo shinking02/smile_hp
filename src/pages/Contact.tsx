@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Button from "@/components/Button";
 import { ContentsContainer } from "@/components/ContentsContainer";
 import Title from "@/components/Title";
-import { sp } from "@/media";
+import { sp } from "@/lib/media";
 
 const ButtonContainer = styled.div`
     width: 100%;

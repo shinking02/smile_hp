@@ -1,13 +1,16 @@
+import { useEffect, useState } from "react";
+
 import styled from "styled-components";
 
-import { useScreenSize, ScreenSize, tab, sp } from "../media";
-
+import BlogCard from "@/components/ BlogCard";
 import ActivityCard from "@/components/ActivityCard";
 import Button from "@/components/Button";
 import { ContentsContainer } from "@/components/ContentsContainer";
 import Letter from "@/components/Letter";
 import LocationBox from "@/components/LocationBox";
 import Title from "@/components/Title";
+import APIClient, { Blog } from "@/lib/apiClient";
+import { useScreenSize, ScreenSize, tab, sp } from "@/lib/media";
 
 const ThumbnailContainer = styled.div<{ src: string }>`
     content: "";
@@ -79,7 +82,24 @@ const ResponsiveContainer = styled.div`
     `}
 `;
 
+const BlogContainer = styled.div`
+    display: flex;
+    overflow-x: scroll;
+    ::-webkit-scrollbar {
+        display: none;
+    }
+`;
+
 const Top: React.FC = () => {
+    const [blogs, setBlogs] = useState<Blog[]>([]);
+
+    useEffect(() => {
+        (async () => {
+            const apiClient = new APIClient();
+            const response = await apiClient.getBlogs(0, 5);
+            setBlogs(response.blogs);
+        })();
+    }, []);
     return (
         <>
             <ThumbnailContainer src="images/background.webp">
@@ -127,15 +147,38 @@ const Top: React.FC = () => {
                     <ButtonContainer>
                         <Button
                             title="お問い合わせ"
-                            onClick={async () => {
+                            onClick={() => {
                                 location.href = "/contact";
                             }}
                         />
                     </ButtonContainer>
                 </ContentsContainer>
-                {/* <ContentsContainer>
+                <ContentsContainer>
                     <Title title="ブログ" />
-                </ContentsContainer> */}
+                    <BlogContainer>
+                        {blogs.map((blog, index) => {
+                            return (
+                                <>
+                                    <BlogCard
+                                        key={index}
+                                        title={blog.title}
+                                        date={blog.formattedDate}
+                                        thumbnail={blog.thumbnailPath || "images/noimage.jpg"}
+                                        href={`/blogs/${blog.date}`}
+                                    />
+                                </>
+                            );
+                        })}
+                    </BlogContainer>
+                    <ButtonContainer>
+                        <Button
+                            title="ブログ一覧"
+                            onClick={() => {
+                                location.href = "/blogs";
+                            }}
+                        />
+                    </ButtonContainer>
+                </ContentsContainer>
                 <ContentsContainer>
                     <Title title="活動場所" />
                     <ResponsiveContainer>
