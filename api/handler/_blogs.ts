@@ -41,7 +41,6 @@ export function handleBlogs(req: express.Request, res: express.Response) {
         .map((dir) => `${process.cwd()}/blogs/${dir}`)
         .slice(startIndex, endIndex);
 
-    console.log(sizeNumber, endIndex);
     const blogs: Blog[] = targetDirectories.map((dir) => {
         const markdown = fs.readFileSync(`${dir}/blog.md`, "utf-8");
         const meta = fs.readFileSync(`${dir}/meta.json`, "utf-8");
