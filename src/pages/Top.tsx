@@ -164,7 +164,7 @@ const Top: React.FC = () => {
                                         title={blog.title}
                                         date={blog.formattedDate}
                                         thumbnail={blog.thumbnailPath || "images/noimage.jpg"}
-                                        href={`/blog?date=${blog.date}`}
+                                        href={`/blog/${blog.date}`}
                                     />
                                 </>
                             );

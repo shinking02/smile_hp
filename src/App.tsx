@@ -40,7 +40,7 @@ const App: React.FC = () => {
                             <Route path="/" element={<Top />} />
                             <Route path="/contact" element={<Contact />} />
                             <Route path="/blog_list" element={<BlogList />} />
-                            <Route path="/blog" element={<Blog />} />
+                            <Route path="/blog/:date" element={<Blog />} />
                             <Route path="*" element={<NotFound />} />
                         </Route>
                     </Routes>
