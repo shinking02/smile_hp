@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import Burger from "./Burger";
 
-import { sp, useScreenSize, ScreenSize } from "@/media";
+import { sp, useScreenSize, ScreenSize } from "@/lib/media";
 
 const HeaderWrapper = styled.header`
     position: fixed;
@@ -56,7 +56,7 @@ const Header = () => {
             <NavWrapper>
                 {screenSize === ScreenSize.PC || screenSize === ScreenSize.TAB ? (
                     <>
-                        <NavItem href="blogs">ブログ</NavItem>
+                        <NavItem href="blog_list">ブログ</NavItem>
                         <NavItem href="contact">お問い合わせ</NavItem>
                     </>
                 ) : (

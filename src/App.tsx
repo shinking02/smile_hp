@@ -2,7 +2,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import reset from "styled-reset";
 
-import Blogs from "./pages/Blogs";
+import Blog from "./pages/Blog";
+import BlogList from "./pages/BlogList";
 
 import Layout from "@/components/Layout";
 import Contact from "@/pages/Contact";
@@ -38,7 +39,8 @@ const App: React.FC = () => {
                         <Route path="/" element={<Layout />}>
                             <Route path="/" element={<Top />} />
                             <Route path="/contact" element={<Contact />} />
-                            <Route path="/blogs" element={<Blogs />} />
+                            <Route path="/blog_list" element={<BlogList />} />
+                            <Route path="/blog" element={<Blog />} />
                             <Route path="*" element={<NotFound />} />
                         </Route>
                     </Routes>
