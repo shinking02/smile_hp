@@ -2,8 +2,6 @@
 
 Smile代表の森田です。ブログではサークルの様子などをお伝えしていきたいと思います。
 
-<!-- ![集合写真](https://zejsou1ph4nepua5.public.blob.vercel-storage.com/2024-04-24/S__5341209-yQy0nbjbgyQLlOgzHW0LduNnT4BAi9.jpg) -->
-
 朝から雨の1日でしたが、レッスンにご参加いただいたみなさまありがとうございます。
 なんと❗️往復4時間もかけて通ってくださる方々も
 本当に感謝です‼
