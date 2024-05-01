@@ -1,7 +1,5 @@
 # 総会を終えて...
 
-<!-- ![トップイメージ](https://zejsou1ph4nepua5.public.blob.vercel-storage.com/2024-05-01/FB468006-E099-4E60-B6F6-43EFA1B54DB0-xDDEtguWlS2iyanrxvFqktYUxXtQ8r.png) -->
-
 ゴールデンウィークにもかかわらずご参加いただきありがとうございます。
 2024年度手話ダンススマイル総会を行いました。
 皆様のご賛同をいただきありがとうございます。
