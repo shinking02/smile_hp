@@ -56,8 +56,8 @@ const Header = () => {
             <NavWrapper>
                 {screenSize === ScreenSize.PC || screenSize === ScreenSize.TAB ? (
                     <>
-                        <NavItem href="blog_list">ブログ</NavItem>
-                        <NavItem href="contact">お問い合わせ</NavItem>
+                        <NavItem href="/blog_list">ブログ</NavItem>
+                        <NavItem href="/contact">お問い合わせ</NavItem>
                     </>
                 ) : (
                     <Burger />

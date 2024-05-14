@@ -13,9 +13,14 @@ import { sp } from "@/lib/media";
 const BlogContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     ${sp`
         justify-content: center;
     `}
+    &:after {
+        content: "";
+        width: 352px;
+    }
 `;
 
 const ButtonContainer = styled.div`
