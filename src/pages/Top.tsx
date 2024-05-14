@@ -85,9 +85,6 @@ const ResponsiveContainer = styled.div`
 const BlogContainer = styled.div`
     display: flex;
     overflow-x: scroll;
-    ::-webkit-scrollbar {
-        display: none;
-    }
 `;
 
 const Top: React.FC = () => {
