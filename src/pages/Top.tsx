@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 
 import styled from "styled-components";
 
-import BlogCard from "@/components/ BlogCard";
 import ActivityCard from "@/components/ActivityCard";
+import BlogCard from "@/components/BlogCard";
 import Button from "@/components/Button";
 import { ContentsContainer } from "@/components/ContentsContainer";
 import Letter from "@/components/Letter";
