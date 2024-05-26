@@ -58,8 +58,8 @@ class Burger extends React.Component {
         return (
             <BurgerStyle>
                 <Menu right width={180}>
-                    <BurgerNavItem href="blog_list">ブログ</BurgerNavItem>
-                    <BurgerNavItem href="contact">お問い合わせ</BurgerNavItem>
+                    <BurgerNavItem href="/blog_list">ブログ</BurgerNavItem>
+                    <BurgerNavItem href="/contact">お問い合わせ</BurgerNavItem>
                 </Menu>
             </BurgerStyle>
         );

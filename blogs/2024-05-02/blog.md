@@ -1,6 +1,6 @@
 # 嬉しいニュース
 
-![渋沢庭園](https://storage.googleapis.com/smile-blog/2024-05-02/40845.jpg)
+![メイン画像](https://storage.googleapis.com/smile-blog/2024-05-02/41382.jpg)
 
 新しいサークル【えるむ】が北区王子にできました。
 指導者のHさん頑張ってくださいね。

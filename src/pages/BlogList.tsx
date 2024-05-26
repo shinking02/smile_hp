@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import styled from "styled-components";
 
-import BlogCard from "@/components/ BlogCard";
+import BlogCard from "@/components/BlogCard";
 import Button from "@/components/Button";
 import { ContentsContainer } from "@/components/ContentsContainer";
 import Loading from "@/components/Loading";
