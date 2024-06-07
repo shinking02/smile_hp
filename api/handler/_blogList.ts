@@ -56,26 +56,27 @@ export function handleBlogList(req: express.Request, res: express.Response) {
         return pageNumber * PAGE_SIZE;
     })();
     const endIndex = isNaN(sizeNumber) ? startIndex + PAGE_SIZE : sizeNumber;
-    const blogDirectories = fs.readdirSync(`${process.cwd()}/blogs`);
+
+    const blogDirectories = fs.readdirSync(`${process.cwd()}/blogs`).sort((a, b) => {
+        return new Date(b).getTime() - new Date(a).getTime();
+    });
+
     const hasNext = endIndex < blogDirectories.length;
     const targetDirectories = blogDirectories
-        .map((dir) => `${process.cwd()}/blogs/${dir}`)
-        .slice(startIndex, endIndex);
-    const blogs: Blog[] = targetDirectories
-        .map((dir) => {
-            const markdown = fs.readFileSync(`${dir}/blog.md`, "utf-8");
-            const yyyymmdd = dir.split("/").pop() || "No date";
-            return {
-                title: extractTitleFromMarkdown(markdown) ?? "No title",
-                date: yyyymmdd,
-                formattedDate: formatDate(yyyymmdd),
-                markdown,
-                thumbnailPath: getFirstImageURLFromMarkdown(markdown) ?? "",
-            };
-        })
-        .sort((a, b) => {
-            return new Date(b.date).getTime() - new Date(a.date).getTime();
-        });
+        .slice(startIndex, endIndex)
+        .map((dir) => `${process.cwd()}/blogs/${dir}`);
+
+    const blogs: Blog[] = targetDirectories.map((dir) => {
+        const markdown = fs.readFileSync(`${dir}/blog.md`, "utf-8");
+        const yyyymmdd = dir.split("/").pop() || "No date";
+        return {
+            title: extractTitleFromMarkdown(markdown) ?? "No title",
+            date: yyyymmdd,
+            formattedDate: formatDate(yyyymmdd),
+            markdown,
+            thumbnailPath: getFirstImageURLFromMarkdown(markdown) ?? "",
+        };
+    });
 
     const response: BlogListResponse = {
         blogs,
