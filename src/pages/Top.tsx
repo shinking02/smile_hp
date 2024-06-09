@@ -200,6 +200,12 @@ const Top: React.FC = () => {
                                     href: "https://goo.gl/maps/DXwji5U968diq2VC9",
                                     imagePath: "images/kodaira.jpg",
                                 },
+                                {
+                                    locationDetail: "北区",
+                                    placeName: "カルチャースペースミュー",
+                                    href: "https://maps.app.goo.gl/LWy3Gsbd11oiRc6e8",
+                                    imagePath: "images/kita.jpg",
+                                },
                             ]}
                         />
                         <LocationBox
