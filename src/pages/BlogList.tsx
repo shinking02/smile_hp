@@ -41,6 +41,7 @@ const BlogList = () => {
         const response = await apiClient.getBlogs(page);
         setBlogs([...blogs, ...response.blogs]);
         setHasNext(response.hasNext);
+        setPage(page + 1);
         setIsLoading(false);
     };
 
@@ -74,7 +75,6 @@ const BlogList = () => {
                     <Button
                         title="もっと見る"
                         onClick={() => {
-                            setPage(page + 1);
                             fetchBlogs();
                         }}
                     />
