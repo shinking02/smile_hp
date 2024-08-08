@@ -32,7 +32,7 @@ const ButtonContainer = styled.div`
 const BlogList = () => {
     const [blogs, setBlogs] = useState<Blog[]>([]);
     const [hasNext, setHasNext] = useState(false);
-    const [page, setPage] = useState<number>(0);
+    const [page, setPage] = useState<number>(1);
     const [isLoading, setIsLoading] = useState(false);
 
     const fetchBlogs = async () => {
