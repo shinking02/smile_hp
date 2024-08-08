@@ -32,7 +32,7 @@ const ButtonContainer = styled.div`
 const BlogList = () => {
     const [blogs, setBlogs] = useState<Blog[]>([]);
     const [hasNext, setHasNext] = useState(false);
-    const [page, setPage] = useState<number>(1);
+    const [page, setPage] = useState<number>(0);
     const [isLoading, setIsLoading] = useState(false);
 
     const fetchBlogs = async () => {
@@ -41,6 +41,7 @@ const BlogList = () => {
         const response = await apiClient.getBlogs(page);
         setBlogs([...blogs, ...response.blogs]);
         setHasNext(response.hasNext);
+        setPage(page + 1);
         setIsLoading(false);
     };
 
@@ -74,7 +75,6 @@ const BlogList = () => {
                     <Button
                         title="もっと見る"
                         onClick={() => {
-                            setPage(page + 1);
                             fetchBlogs();
                         }}
                     />
