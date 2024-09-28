@@ -18,7 +18,7 @@ module.exports = {
         react: { version: "detect" },
     },
     rules: {
-        "max-len": ["warn", { code: 100 }],
+        "max-len": ["warn", { code: 180 }],
         "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
         "react-hooks/exhaustive-deps": "off",
         // it ではなく test の使用を強制
