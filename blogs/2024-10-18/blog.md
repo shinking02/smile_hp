@@ -1,6 +1,6 @@
 # 秋日和
 
-![花の写真](https://storage.googleapis.com/smile-blog/2024-1018/S__1851530.jpg)
+![花の写真](https://storage.googleapis.com/smile-blog/2024-10-18/2024-1018_S__1851530.jpg)
 
 家を出た時に爽やかな風にのり金木犀の香りが漂ってきて懐かしい気分になりました。
 道沿いにはコスモスを見かけるようになり秋を感じています。
@@ -12,4 +12,4 @@
 白い手袋にサングラス🕶️などと楽しく練習しています。
 出来上がりが楽しみです。
 
-![集合写真](https://storage.googleapis.com/smile-blog/2024-1018/S__1851532.jpg)
+![集合写真](https://storage.googleapis.com/smile-blog/2024-10-18/2024-1018_S__1851532.jpg)
