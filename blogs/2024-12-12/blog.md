@@ -1,6 +1,6 @@
 # クリスマス交流会
 
-- [クリスマス交流会](https://storage.googleapis.com/smile-blog/2024-12-12/2F9DE2DD-8E64-4A68-B7F8-6E6189A434F8.webp)
+![クリスマス交流会](https://storage.googleapis.com/smile-blog/2024-12-12/2F9DE2DD-8E64-4A68-B7F8-6E6189A434F8.webp)
 
 12月11日クリスマス交流会を無事に終えることができました。　　　　　
 イベントにお集まりいただきました皆様ありがとうございます。
@@ -31,6 +31,5 @@
 ![集合写真4](https://storage.googleapis.com/smile-blog/2024-12-12/S__3514460.webp)
 
 ![集合写真5](https://storage.googleapis.com/smile-blog/2024-12-12/S__3514461.webp)
-
 
 本日はお疲れ様でした。楽しい時間をスマイルの皆様と過ごせたことに感謝申し上げます。これからもこのような機会が作れるように努力したいです。
